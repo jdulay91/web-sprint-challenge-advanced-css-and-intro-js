@@ -135,6 +135,23 @@ button:hover{
     width:100%;
 }
 
+.artist img:hover{
+    animation-name: circleshiz;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-duration: 5s;
+    object-fit: scale-down;
+}
+
+@keyframes circleshiz{
+    0%{border-radius: 0%;}
+    20%{border-radius: 10%;}
+    40%{border-radius: 20%;}
+    60%{border-radius: 30%;}
+    80%{border-radius: 40%;}
+    100%{border-radius: 50%;}
+}
+
 @media (max-width:500px){
 
     nav{
