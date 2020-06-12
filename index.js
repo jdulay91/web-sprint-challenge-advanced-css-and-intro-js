@@ -205,15 +205,15 @@ const artists = [
 
 /* Task 1: Practice accessing data above by console.log-ing following items:
 
-(1) Name of the first artist (0th index) in the array
+(1) Name of the first artist (0th index) in the array*/
+console.log(artists[0].name);
 
-(2) Bio of the third artist (2nd index) in the array */
-// console.log(artists[0].name);
-// console.log(artists[2].bio);
+// (2) Bio of the third artist (2nd index) in the array 
+console.log(artists[2].bio);
 
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-// artists[8].name = "Vincent Van Gogh"
+artists[8].name = "Vincent Van Gogh"
 // console.log(artists[8].name);
 
 
@@ -236,8 +236,13 @@ function getArtistByIndex(array, index) {
 
 function get20s(data){
   let artistInThe20thCentury = [];
-  
+  for(let i = 0;i<data.length;i++){
+    if(data[i].years.substring(7)<=2000 || data[i].years.substring(0,5) >= 1900 ){
+      artistInThe20thCentury.push(data[i].name)
+    }
+  } return artistInThe20thCentury;  
 }
+// console.log(get20s(artists));
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -273,7 +278,7 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 At the end, this function should console.log() the new array with information added"*/
 
 function addArtist(arrInfo){
-    artists.push(arrInfo);   
+    artists.push(arrInfo); 
 
   }
 const myInfo = [{
@@ -337,7 +342,7 @@ function getHTML(/* Code here */){
   }
 
 
-/* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
+/* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns  the same array in a randomized order. */
 
 function randomize(/* Code here */){
 
