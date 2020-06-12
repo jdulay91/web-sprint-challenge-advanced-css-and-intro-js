@@ -208,7 +208,7 @@ const artists = [
 (1) Name of the first artist (0th index) in the array*/
 console.log(artists[0].name);
 
-// (2) Bio of the third artist (2nd index) in the array 
+// // (2) Bio of the third artist (2nd index) in the array 
 console.log(artists[2].bio);
 
 
@@ -344,12 +344,29 @@ function getHTML(/* Code here */){
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns  the same array in a randomized order. */
 
-function randomize(/* Code here */){
+function randomize(arr){
 
-    /* Code here */
-
+    for(let i = arr.length-1 ; i>0; i--){
+      const j = Math.floor(Math.random()*i)
+      const temp = arr[i]
+      arr[i] = arr[j]
+      arr[j] = temp
+      return arr;
+    }
   }
-
+// let x = [1,2,3]
+// console.log(randomize(x));
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all
    artists born in the 1900s with .filter, for example) */
+
+   const bornInThe1900s = (arr) => {
+    let names = []
+    const result=arr.filter(i=>i.years.substring(0,5)>=1900);
+    for( let i=0; i<result.length; i++){
+      names.push(result[i].name);
+    }return names;
+   }
+
+
+  // console.log(bornInThe1900s(artists));
